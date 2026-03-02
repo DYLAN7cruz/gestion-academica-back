@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  # Solo tu Aplicación NestJS
+  gestion_academica:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gestion_academica_app
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      # Esto permite que el contenedor vea el localhost de tu Windows
+      DB_HOST: host.docker.internal 
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

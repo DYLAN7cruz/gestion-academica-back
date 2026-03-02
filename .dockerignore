@@ -1,0 +1,18 @@
+# Archivos que SI deben ignorarse
+node_modules
+dist
+npm-debug.log
+.git
+.DS_Store
+.vscode
+.idea
+*.log
+coverage
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# --- NO IGNORES ESTOS (Quítalos de tu lista actual) ---
+# src            <-- ¡Esto es tu código!
+# tsconfig.json  <-- ¡Configuración de TS!
+# nest-cli.json  <-- ¡Configuración de Nest!
